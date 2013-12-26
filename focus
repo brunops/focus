@@ -5,3 +5,8 @@
 
 # uncomment / unblock
 #sed -i '' 's/^#\(.*#\ temp\-block\)$/\1/' sup.txt
+
+#lead='^# focus blocked sites start$'
+#tail='^# focus blocked sites end$'
+#sed -e "/$lead/,/$tail/{ /$lead/{p; r blocked
+#        }; /$tail/p; d;}"  sup.txt
