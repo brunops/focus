@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "blocking websites.."
+echo "blocked!"
+
+# start node server listening on port 80
+echo "\nstarting server.."
+exec sudo node server.js &
+
+# clear dns cache
+echo "\nclearing dns"
+sudo killall -HUP mDNSResponder
+
+echo "haha now you gotta work! you'll have to :)"
+
