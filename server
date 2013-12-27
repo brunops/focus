@@ -3,13 +3,13 @@
 echo "blocking websites.."
 echo "blocked!"
 
-# start node server listening on port 80
-echo "\nstarting server.."
-exec sudo node server.js &
-
 # clear dns cache
 echo "\nclearing dns"
 sudo killall -HUP mDNSResponder
+
+# start node server listening on port 80
+echo "\nstarting server.."
+exec sudo node server.js
 
 echo "haha now you gotta work! you'll have to :)"
 
