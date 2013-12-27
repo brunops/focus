@@ -1,5 +1,11 @@
 #!/bin/sh
 
+trap ctrl_c INT
+function ctrl_c() {
+  echo "\n\nunblocking websites.."
+  echo "done, go play, kid"
+}
+
 echo "blocking websites.."
 echo "blocked!"
 
@@ -9,7 +15,6 @@ sudo killall -HUP mDNSResponder
 
 # start node server listening on port 80
 echo "\nstarting server.."
-exec sudo node server.js
-
 echo "haha now you gotta work! you'll have to :)"
+sudo node server.js
 
