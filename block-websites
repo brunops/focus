@@ -1,0 +1,20 @@
+#!/bin/sh
+
+file='sup.txt'
+lead='# focus blocked sites start'
+tail='# focus blocked sites end'
+
+# Check if rules are already applied
+if [ `sed -n '/^'"$lead"'$/p' $file | wc -l` -gt 0 ];
+then
+  # update
+  echo "achou o pattern manolo"
+  sed -e "/^$lead$/,/^$tail$/{ /^$lead$/{p; r blocked
+        }; /^$tail$/p; d;}" $file
+else
+  # append to file
+  echo "nem :/"
+  echo $lead  >> $file
+  cat blocked >> $file
+  echo $tail  >> $file
+fi

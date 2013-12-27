@@ -2,5 +2,18 @@ test
 test2
 test3
 test4 # temp-block
+
+# focus blocked sites start
+bla bla bla
+ble ble
+sup sup
+hey ho let's go
+# focus blocked sites end
+
 test5
 test6
+
+/Users/brunops/projects
+
+
+
