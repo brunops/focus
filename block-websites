@@ -1,6 +1,6 @@
 #!/bin/sh
 
-file='sup.txt'
+file='/etc/hosts'
 lead='# focus block start'
 tail='# focus block end'
 
@@ -15,6 +15,6 @@ else
   # append to file
   echo "file updated by append"
   echo $lead  >> $file
-  cat blocked >> $file
+  sed -n 's/./127.0.0.1 &/p' blocked >> $file
   echo $tail  >> $file
 fi

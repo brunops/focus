@@ -1,6 +1,6 @@
 #!/bin/sh
 
-file='sup.txt'
+file='/etc/hosts'
 lead='# focus block start'
 tail='# focus block end'
 
