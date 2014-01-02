@@ -18,3 +18,6 @@ Your root password will be required to run this project because blocking occurs 
 ```
   $ ./server
 ```
+
+##License
+MIT
