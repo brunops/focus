@@ -1,8 +1,13 @@
 #!/bin/sh
 
+file='sup.txt'
+lead='# focus block start'
+tail='# focus block end'
+
 trap ctrl_c INT
 function ctrl_c() {
   echo "\n\nunblocking websites.."
+  sudo sed -i.bkp -e "/$lead/,/$tail/d" $file
   echo "done, go play, kid"
 }
 
