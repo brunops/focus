@@ -4,7 +4,7 @@ Block websites that prevents you from being productive :p
 
 Display disapproval images to make you feel bad.
 
-![Disapproval](/images/look.png)
+![Disapproval](images/look.png)
 
 ##Important
 Your root password will be required to run this project because blocking occurs by writing to /etc/hosts, and the node.js server has to run (does it really?) with sudo as well in order to listen to port 80. So use it at your own risk.
