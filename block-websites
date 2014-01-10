@@ -4,17 +4,29 @@ file='/etc/hosts'
 lead='# focus block start'
 tail='# focus block end'
 
+# update blocked websites by prefixing it with localhost ( 127.0.0.1 )
+sed -i'' -e '/^127.0.0.1/ !{
+                s/.*/127.0.0.1 &/
+             }' blocked
+
 # Check if rules are already applied
 if [ `sed -n '/^'"$lead"'$/p' $file | wc -l` -gt 0 ];
 then
   # update
   echo "file updated"
-  sed -e "/^$lead$/,/^$tail$/{ /^$lead$/{p; r blocked
-        }; /^$tail$/p; d;}" $file
+  sed -i'' -e "/^$lead$/,/^$tail$/ { 
+            /^$lead$/ { 
+              p; 
+              r blocked
+            }; 
+
+            /^$tail$/p; 
+            d;
+          }" $file
 else
   # append to file
   echo "file updated by append"
   echo $lead  >> $file
-  sed -n 's/./127.0.0.1 &/p' blocked >> $file
+  sed -n 's/./&/p' blocked >> $file
   echo $tail  >> $file
 fi
