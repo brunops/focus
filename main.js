@@ -13,7 +13,7 @@
     var img = $('<img />')
       .attr('src', imgPath);
 
-    $('body').append(img);
+    $('.son-i-am-disapoint').append(img);
   });
 
 })(jQuery);
